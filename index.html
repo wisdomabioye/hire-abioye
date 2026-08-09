@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abioye — Web3 &amp; Full-Stack Developer</title>
+<meta name="description" content="Fixed-scope builds, shipped fast. Alkanes &amp; Ordinals in Rust, Solana/EVM dApps, React Native, AI products.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+  :root{
+    --ink:#0C0F16; --panel:#12161F; --line:#242C3C;
+    --paper:#EDECE4; --dim:#8A94A6;
+    --btc:#F7931A; --live:#4FBF8B;
+    --disp:'Bricolage Grotesque',sans-serif;
+    --sans:'IBM Plex Sans',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:var(--sans);line-height:1.55;font-size:16px}
+  a{color:inherit}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--btc);text-transform:uppercase;margin-bottom:14px}
+  h2{font-family:var(--disp);font-weight:700;font-size:26px;letter-spacing:-.01em;margin-bottom:22px}
+
+  /* hero */
+  .hero{padding:76px 0 56px;border-bottom:1px solid var(--line)}
+  .hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(34px,7vw,54px);line-height:1.06;letter-spacing:-.02em;margin-bottom:20px}
+  .hero h1 em{font-style:normal;color:var(--btc)}
+  .hero p{color:var(--dim);font-size:17px;max-width:56ch;margin-bottom:26px}
+  .hero p b{color:var(--paper);font-weight:600}
+  .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+  .cta{display:inline-block;background:var(--btc);color:#101010;font-family:var(--disp);font-weight:700;font-size:16px;padding:13px 26px;border-radius:10px;text-decoration:none;text-align:center}
+  .cta.ghost{background:transparent;color:var(--paper);border:1px solid var(--line)}
+  @media(max-width:480px){.cta-row{flex-direction:column}.cta{width:100%}}
+
+  /* deploy log */
+  .log{font-family:var(--mono);font-size:13px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden}
+  .log-head{padding:10px 16px;border-bottom:1px solid var(--line);color:var(--dim);font-size:11px;letter-spacing:.12em}
+  .row{display:block;text-decoration:none;padding:14px 16px;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:0}
+  .row:hover{background:#161B27}
+  .row .top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+  .tag{font-size:10px;font-weight:600;letter-spacing:.1em;padding:2px 7px;border-radius:4px}
+  .tag.live{color:var(--live);border:1px solid var(--live)}
+  .tag.beta{color:var(--btc);border:1px solid var(--btc)}
+  .url{color:var(--paper);font-weight:600}
+  .role{color:var(--dim);font-size:11px;margin-left:auto}
+  .desc{color:var(--dim);font-size:12.5px;line-height:1.5}
+
+  /* packages */
+  .pkg{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:22px;margin-bottom:16px}
+  .pkg-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  .pkg h3{font-family:var(--disp);font-weight:700;font-size:19px}
+  .price{font-family:var(--mono);font-size:15px;color:var(--btc);font-weight:600;white-space:nowrap}
+  .pkg .time{font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:12px}
+  .pkg ul{list-style:none}
+  .pkg li{padding:4px 0 4px 22px;position:relative;font-size:14.5px;color:#C9CBD4}
+  .pkg li::before{content:'—';position:absolute;left:0;color:var(--btc)}
+  .pkg .proof{margin-top:12px;font-size:13px;color:var(--dim);border-top:1px dashed var(--line);padding-top:10px}
+  .pkg .proof a{color:var(--paper)}
+
+  /* process */
+  .steps{display:grid;gap:14px}
+  @media(min-width:640px){.steps{grid-template-columns:1fr 1fr 1fr}}
+  .step{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--panel)}
+  .step .n{font-family:var(--mono);color:var(--btc);font-size:12px;margin-bottom:8px}
+  .step h4{font-family:var(--disp);font-size:16px;font-weight:700;margin-bottom:6px}
+  .step p{font-size:13.5px;color:var(--dim)}
+
+  /* contact */
+  .contact{text-align:center;border-bottom:0;padding-bottom:72px}
+  .contact h2{font-size:30px}
+  .contact p{color:var(--dim);margin-bottom:24px}
+  .links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .links a{font-family:var(--mono);font-size:14px;border:1px solid var(--line);border-radius:10px;padding:12px 18px;text-decoration:none;background:var(--panel)}
+  .links a:hover{border-color:var(--btc)}
+  footer{padding:22px 0;color:var(--dim);font-size:12px;font-family:var(--mono);text-align:center}
+  footer a{color:var(--dim)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Bitcoin metaprotocols · Solana / EVM · Full-stack · Mobile · AI</div>
+    <h1>Fixed scope. Fixed price. <em>Shipped.</em></h1>
+    <p>I'm Abioye, a full-stack Web3 developer who writes <b>Rust on Bitcoin (Alkanes, Ordinals)</b>, builds <b>Solana &amp; EVM dApps</b>, ships <b>React Native apps</b> and <b>AI products</b>. You get a scoped deliverable with a date on it, not an hourly meter. 50% locks your slot, 50% on delivery.</p>
+    <div class="cta-row">
+      <a class="cta" href="#contact">Start a scope call</a>
+      <a class="cta ghost" href="#work">See shipped work</a>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="eyebrow">Proof</div>
+    <h2>Deploy log</h2>
+    <div class="log">
+      <div class="log-head">$ ls --shipped</div>
+      <a class="row" href="https://orbital.adors.org" target="_blank" rel="noopener">
+        <div class="top"><span class="tag live">LIVE</span><span class="url">orbital.adors.org</span><span class="role">client build</span></div>
+        <div class="desc">Adors Orbital — Bitcoin launchpad &amp; NFT platform on Alkanes. WASM contract deployment, trace explorer, frBTC wrap/unwrap, live mint engine.</div>
+      </a>
+      <a class="row" href="https://www.tendahq.com" target="_blank" rel="noopener">
+        <div class="top"><span class="tag live">LIVE</span><span class="url">tendahq.com</span><span class="role">founder</span></div>
+        <div class="desc">Tenda — escrow-secured gigs and P2P cash trades on Solana, Base and Celo. Funds lock on-chain, proof releases them.</div>
+      </a>
+      <a class="row" href="https://etfpulse.vercel.app" target="_blank" rel="noopener">
+        <div class="top"><span class="tag live">LIVE</span><span class="url">etfpulse.vercel.app</span><span class="role">client build</span></div>
+        <div class="desc">ETFPulse — crypto ETF flow signals, AI-explained, delivered to Telegram. Every entry, stop and target measured 72h later — in public.</div>
+      </a>
+      <a class="row" href="https://www.trydocketapp.com" target="_blank" rel="noopener">
+        <div class="top"><span class="tag beta">BETA</span><span class="url">trydocketapp.com</span><span class="role">client build</span></div>
+        <div class="desc">Docket — AI case prep for U.S. immigration attorneys. 5+ partner attorneys, 40+ cases processed in active beta.</div>
+      </a>
+      <a class="row" href="https://www.usefairdrop.xyz" target="_blank" rel="noopener">
+        <div class="top"><span class="tag live">LIVE</span><span class="url">usefairdrop.xyz</span><span class="role">client build</span></div>
+        <div class="desc">Fairdrop — privacy-preserving token launches and capital formation on Aleo.</div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Offers</div>
+    <h2>Three ways to hire me</h2>
+
+    <div class="pkg">
+      <div class="pkg-top"><h3>Bitcoin metaprotocol development</h3><span class="price">$1,500 – 2,500</span></div>
+      <div class="time">scoped per project · Rust</div>
+      <ul>
+        <li>Alkanes smart contracts (WASM) — written, tested, deployed</li>
+        <li>Ordinals / Runes tooling, indexers and mint infrastructure</li>
+        <li>Launchpad &amp; minting sites wired to your contracts</li>
+        <li>frBTC / wrapping flows, trace &amp; simulation tooling</li>
+      </ul>
+      <div class="proof">Proof: <a href="https://orbital.adors.org" target="_blank" rel="noopener">Adors Orbital</a> — full Alkanes launchpad, live on mainnet. 5★ record across 5 client deliveries in this niche.</div>
+    </div>
+
+    <div class="pkg">
+      <div class="pkg-top"><h3>Telegram bots &amp; signal systems</h3><span class="price">$700 – 1,200</span></div>
+      <div class="time">5–7 days · fixed price</div>
+      <ul>
+        <li>Trading alerts, wallet tracking, mint &amp; whale notifications</li>
+        <li>Signal pipelines with AI-generated explanations</li>
+        <li>Community tools for Telegram / Discord / Farcaster</li>
+      </ul>
+      <div class="proof">Proof: <a href="https://etfpulse.vercel.app" target="_blank" rel="noopener">ETFPulse</a> — live signal product with publicly published outcomes.</div>
+    </div>
+
+    <div class="pkg">
+      <div class="pkg-top"><h3>Full-stack MVP — web, mobile or AI</h3><span class="price">$2,000 – 3,500</span></div>
+      <div class="time">2–3 weeks · fixed scope</div>
+      <ul>
+        <li>Next.js dApps: launchpads, dashboards, marketplaces, mini apps</li>
+        <li>React Native mobile apps, iOS + Android from one codebase</li>
+        <li>AI-powered products for your niche — intake to output pipeline</li>
+        <li>Solidity / Solana programs where the product needs them</li>
+      </ul>
+      <div class="proof">Proof: <a href="https://www.tendahq.com" target="_blank" rel="noopener">Tenda</a> (multi-chain escrow marketplace) · <a href="https://www.trydocketapp.com" target="_blank" rel="noopener">Docket</a> (AI legal-tech, 40+ cases in beta).</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Process</div>
+    <h2>How working with me works</h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h4>Scope call — free</h4><p>30 minutes. We fix the deliverable, the date, and the price. We get it into writing the same day.</p></div>
+      <div class="step"><div class="n">02</div><h4>50% locks the slot</h4><p>Direct or via escrow, your choice. Work starts immediately. No meter running, no scope drift.</p></div>
+      <div class="step"><div class="n">03</div><h4>Ship, then the rest</h4><p>You review the live deliverable. Remaining 50% on acceptance. Handover includes code, docs and deploy access.</p></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="eyebrow">Contact</div>
+    <h2>Got something stuck on your roadmap?</h2>
+    <p>Tell me what it is and when you need it. I reply within a few hours.</p>
+    <div class="links">
+      <a href="https://x.com/wisdomabioye" target="_blank" rel="noopener">DM on X →</a>
+      <a href="https://farcaster.xyz/wisdomabioye" target="_blank" rel="noopener">Farcaster →</a>
+      <a href="mailto:wisdomabioye@gmail.com">Email →</a>
+    </div>
+  </section>
+
+  <footer>Abioye · founder, <a href="https://www.xpldevelopers.org" target="_blank" rel="noopener">XPL Developers</a> · building <a href="https://www.tendahq.com" target="_blank" rel="noopener">Tenda</a></footer>
+
+</div>
+</body>
+</html>
